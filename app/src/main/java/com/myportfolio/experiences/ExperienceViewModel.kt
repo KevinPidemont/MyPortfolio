@@ -32,6 +32,27 @@ private val WorkExperienceListDataSet = WorkExperienceList(
                         """.trimIndent(),
             fromDate = "Avril",
             toDate = "Août 2018",
+        ),
+        WorkExperience(
+            id = 3L,
+            name = "Laune Valley Farm Hostel",
+            companyName = "Killorglin, Irlande",
+            description = """
+                Chambre d'hôtes & ferme
+                Diverses tâches de bricolages, jardinages, accueil des clients
+                        """.trimIndent(),
+            fromDate = "Juin",
+            toDate = "Août 2017",
+        ),
+        WorkExperience(
+            id = 4L,
+            name = "Emploi saisonnier en intérim",
+            companyName = "Sofrilog",
+            description = """
+                Manutention
+                        """.trimIndent(),
+            fromDate = "Été 2015",
+            toDate = "Été 2016",
         )
     )
 )
