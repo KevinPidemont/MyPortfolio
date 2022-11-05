@@ -74,7 +74,7 @@ private fun WorkExperienceCard(
     onSelected: (WorkExperience) -> Unit
 ) {
     Card(
-        onClick = { onSelected(workExperience) },
+        //onClick = { onSelected(workExperience) },
         shape = RoundedCornerShape(CardCornerRadius)
     ) {
         Column(
