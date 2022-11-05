@@ -15,6 +15,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -83,6 +84,7 @@ private fun ProjectCard(project: Project) {
                 modifier = Modifier
                     .size(48.dp)
                     .clip(CircleShape)
+                    .background(BackgroundColor)
                     .align(Alignment.CenterVertically),
                 contentScale = ContentScale.Crop
             )

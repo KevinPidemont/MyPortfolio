@@ -19,7 +19,7 @@ private val ProjectsData = ProjectList(
         ),
         Project(
             title = "ShoppingList",
-            image = R.drawable.ic_launcher_background,
+            image = R.drawable.flutter_logo,
             tags = listOf(
                 Tag("Dart"),
                 Tag("Flutter"),
