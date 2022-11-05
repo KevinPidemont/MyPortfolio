@@ -1,7 +1,5 @@
 package com.myportfolio.profile.view
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -9,16 +7,13 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Card
-import androidx.compose.material.Icon
 import androidx.compose.material.Text
-import androidx.compose.material.TextButton
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ExpandMore
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -29,7 +24,10 @@ import com.google.accompanist.flowlayout.FlowRow
 import com.google.accompanist.flowlayout.MainAxisAlignment
 import com.google.accompanist.flowlayout.SizeMode
 import com.myportfolio.profile.ProfileViewModel
-import com.myportfolio.profile.model.*
+import com.myportfolio.profile.model.MyProfile
+import com.myportfolio.profile.model.ProfileSection
+import com.myportfolio.profile.model.SectionCategory
+import com.myportfolio.profile.model.SectionData
 import com.myportfolio.ui.theme.*
 
 @Composable
@@ -85,9 +83,9 @@ private fun PresentationSection(
     presentation: SectionData.Presentation,
     modifier: Modifier = Modifier
 ) {
-    var isExpanded by remember {
-        mutableStateOf(false)
-    }
+//    var isExpanded by remember {
+//        mutableStateOf(false)
+//    }
 
     Card(
         modifier = modifier,
@@ -122,26 +120,26 @@ private fun PresentationSection(
 
             Text(text = presentation.description, fontSize = 12.sp)
 
-            AnimatedVisibility(visible = isExpanded) {
-                Column {
-                    Text(text = "Coucou c'est moi")
-                    Text(text = "Nouvelle ligne")
-                }
-            }
+//            AnimatedVisibility(visible = isExpanded) {
+//                Column {
+//                    Text(text = "Coucou c'est moi")
+//                    Text(text = "Nouvelle ligne")
+//                }
+//            }
 
-            TextButton(
-                onClick = { isExpanded = !isExpanded },
-                modifier = Modifier.align(Alignment.CenterHorizontally)
-            ) {
-                val text = if (isExpanded) "Voir moins" else "Voir plus"
-//                val icon = if (isExpanded) Icons.Default.ExpandLess else Icons.Default.ExpandMore
-
-                Text(text = text, color = BackgroundColor)
-
-                val rotation by animateFloatAsState(targetValue = if (isExpanded) 180f else 0f)
-
-                Icon(imageVector = Icons.Default.ExpandMore, contentDescription = null, tint = BackgroundColor, modifier = Modifier.rotate(rotation))
-            }
+//            TextButton(
+//                onClick = { isExpanded = !isExpanded },
+//                modifier = Modifier.align(Alignment.CenterHorizontally)
+//            ) {
+//                val text = if (isExpanded) "Voir moins" else "Voir plus"
+////                val icon = if (isExpanded) Icons.Default.ExpandLess else Icons.Default.ExpandMore
+//
+//                Text(text = text, color = BackgroundColor)
+//
+//                val rotation by animateFloatAsState(targetValue = if (isExpanded) 180f else 0f)
+//
+//                Icon(imageVector = Icons.Default.ExpandMore, contentDescription = null, tint = BackgroundColor, modifier = Modifier.rotate(rotation))
+//            }
         }
     }
 }
