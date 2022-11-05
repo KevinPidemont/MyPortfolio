@@ -24,65 +24,36 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.flowlayout.FlowRow
 import com.google.accompanist.flowlayout.MainAxisAlignment
 import com.google.accompanist.flowlayout.SizeMode
-import com.myportfolio.R
+import com.myportfolio.profile.ProfileViewModel
 import com.myportfolio.profile.model.*
 import com.myportfolio.ui.theme.*
 
-val MyProfileData = MyProfile(
-    sections = listOf(
-        ProfileSection(
-            category = SectionCategory("Qui suis-je"),
-            data = SectionData.Presentation(
-                firstName = "Kévin",
-                lastName = "Pidemont",
-                position = "Développeur Android & Web",
-                image = R.drawable.my_profile_image,
-                description = """
-                    Fort d'une expérience de 4 années dans
-                    le développement Android. Je souhaite
-                    mettre à profit mes compétences.
-                    C'est avec discipline, rigueur, curiosité et
-                    passion que j'aborde mes projets.
-                """.trimIndent()
-            )
-        ),
-        ProfileSection(
-            category = SectionCategory("Compétences"),
-            data = SectionData.Skills(
-                value = listOf(
-                    Skill.ProgrammingLanguages,
-                    Skill.Frameworks
-                )
-            )
-        ),
-        ProfileSection(
-            category = SectionCategory("Centre d'intérêts"),
-            data = SectionData.Interests(
-                value = listOf(
-                    Interest("Randonnée"),
-                    Interest("Course à pied"),
-                    Interest("Développement informatique"),
-                    Interest("Développement personnel")
-                )
-            )
-        )
-    )
-)
+@Composable
+fun MyProfileScreen(viewModel : ProfileViewModel = viewModel()) {
+    val state by viewModel.uiState
+
+    SideEffect {
+        viewModel.getMyProfile()
+    }
+
+    MyProfileContent(profile = state.profile)
+}
 
 @Composable
-fun MyProfileScreen() {
+private fun MyProfileContent(profile: MyProfile) {
     Column(modifier = Modifier.verticalScroll(state = rememberScrollState())) {
-        MyProfileData.sections.forEachIndexed { index, item ->
+        profile.sections.forEachIndexed { index, item ->
             UIProfileSection(
                 section = item,
                 modifier = Modifier.padding(
                     top = SpacingLarge,
                     start = SpacingLarge,
                     end = SpacingLarge,
-                    bottom = if (index == MyProfileData.sections.size - 1) SpacingLarge else 0.dp
+                    bottom = if (index == profile.sections.size - 1) SpacingLarge else 0.dp
                 )
             )
         }
