@@ -9,6 +9,7 @@ import com.myportfolio.projects.domain.repository.ProjectRepository
 private val ProjectsData = ProjectList(
     projects = listOf(
         Project(
+            id = 1L,
             title = "MyPortfolio",
             image = R.drawable.my_profile_image,
             tags = listOf(
@@ -18,6 +19,7 @@ private val ProjectsData = ProjectList(
             )
         ),
         Project(
+            id = 2L,
             title = "ShoppingList",
             image = R.drawable.flutter_logo,
             tags = listOf(

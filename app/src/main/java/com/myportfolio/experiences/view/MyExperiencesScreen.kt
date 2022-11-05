@@ -31,7 +31,8 @@ fun MyExperiencesScreen(
     // TODO show a loader and handle error
     when (val result = state.value) {
         is ExperienceUiState.Success -> WorkExperienceList(experienceList = result.experienceList) {
-            navigateTo(Routes.RoutesWithArguments.ExperienceDetail.create(it))
+            navigateTo(Routes.ExperienceDetail.navigate(it.id.toString()))
+//            navigateTo(Routes.RoutesWithArguments.ExperienceDetail.create(it))
         }
     }
 }
@@ -74,7 +75,7 @@ private fun WorkExperienceCard(
     onSelected: (WorkExperience) -> Unit
 ) {
     Card(
-        //onClick = { onSelected(workExperience) },
+        onClick = { onSelected(workExperience) },
         shape = RoundedCornerShape(CardCornerRadius)
     ) {
         Column(

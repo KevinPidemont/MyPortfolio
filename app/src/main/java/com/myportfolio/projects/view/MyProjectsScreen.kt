@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
@@ -15,42 +16,48 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.myportfolio.base.model.Routes
 import com.myportfolio.projects.domain.model.Project
 import com.myportfolio.projects.domain.model.ProjectList
 import com.myportfolio.projects.ui.viewmodel.ProjectListViewModel
 import com.myportfolio.ui.theme.*
 
 @Composable
-fun MyProjectScreen(viewModel: ProjectListViewModel = viewModel()) {
+fun MyProjectScreen(navigateTo: (String) -> Unit, viewModel: ProjectListViewModel = viewModel()) {
     val state by viewModel.uiState
 
     SideEffect {
         viewModel.getProjectList()
     }
 
-    UIProjectList(projectList = state.projectList)
-}
-
-@Composable
-private fun UIProjectList(projectList: ProjectList) {
-    LazyColumn(contentPadding = PaddingValues(SpacingLarge)) {
-        items(projectList.projects) {
-            Spacer(modifier = Modifier.height(SpacingMedium))
-            ProjectCard(it)
-        }
+    UIProjectList(projectList = state.projectList) {
+        navigateTo(Routes.ProjectDetail.navigate(it.id.toString()))
     }
 }
 
 @Composable
-private fun ProjectCard(project: Project) {
-    Card(shape = RoundedCornerShape(CardCornerRadius)) {
+private fun UIProjectList(projectList: ProjectList, onSelected: (Project) -> Unit) {
+    LazyColumn(contentPadding = PaddingValues(SpacingLarge)) {
+        items(projectList.projects) {
+            Spacer(modifier = Modifier.height(SpacingMedium))
+            ProjectCard(project = it, onSelected = onSelected)
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterialApi::class)
+@Composable
+private fun ProjectCard(project: Project, onSelected: (Project) -> Unit) {
+    Card(
+        onClick = { onSelected(project) },
+        shape = RoundedCornerShape(CardCornerRadius)
+    ) {
         Row(
             modifier = Modifier
                 .padding(CardInsets)
