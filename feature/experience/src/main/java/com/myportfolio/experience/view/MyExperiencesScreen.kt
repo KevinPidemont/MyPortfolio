@@ -22,7 +22,7 @@ import com.myportfolio.theme.*
 
 @Composable
 fun MyExperiencesScreen(
-    navigateTo: (String) -> Unit,
+    onExperienceSelected: (Long) -> Unit,
     viewModel: ExperienceViewModel = viewModel()
 ) {
     val state = viewModel.uiState
@@ -30,8 +30,7 @@ fun MyExperiencesScreen(
     // TODO show a loader and handle error
     when (val result = state.value) {
         is ExperienceUiState.Success -> WorkExperienceList(experienceList = result.experienceList) {
-//            navigateTo(Routes.ExperienceDetail.navigate(it.id.toString()))
-//            navigateTo(Routes.RoutesWithArguments.ExperienceDetail.create(it))
+            onExperienceSelected(it.id)
         }
     }
 }

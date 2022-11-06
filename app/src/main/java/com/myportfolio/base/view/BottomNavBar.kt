@@ -7,18 +7,17 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 
 data class BottomNavBarItemData(
-    val id: String,
     @StringRes val title: Int,
     val icon: ImageVector
 )
 
 @Composable
-fun BottomNavBar(items: List<BottomNavBarItemData>, selectedIndex: Int, onSelected: (String, Int) -> Unit) {
+fun BottomNavBar(items: List<BottomNavBarItemData>, selectedIndex: Int, onSelected: (Int) -> Unit) {
     BottomNavigation {
         items.forEachIndexed { index, item ->
             BottomNavigationItem(
                 selected = selectedIndex == index,
-                onClick = { onSelected(item.id, index) },
+                onClick = { onSelected(index) },
                 icon = {
                     Icon(item.icon, contentDescription = null)
                 },

@@ -28,16 +28,14 @@ import com.myportfolio.project.ui.viewmodel.ProjectListViewModel
 import com.myportfolio.theme.*
 
 @Composable
-fun MyProjectScreen(navigateTo: (String) -> Unit, viewModel: ProjectListViewModel = viewModel()) {
+fun MyProjectScreen(onProjectSelected: (Long) -> Unit, viewModel: ProjectListViewModel = viewModel()) {
     val state by viewModel.uiState
 
     SideEffect {
         viewModel.getProjectList()
     }
 
-    UIProjectList(projectList = state.projectList) {
-//        navigateTo(Routes.ProjectDetail.navigate(it.id.toString()))
-    }
+    UIProjectList(projectList = state.projectList, onSelected = { onProjectSelected(it.id) })
 }
 
 @Composable
