@@ -16,3 +16,4 @@ rootProject.name = "MyPortfolio"
 include ':app'
 include ':feature:project'
 include ':core:theme'
+include ':feature:profile'

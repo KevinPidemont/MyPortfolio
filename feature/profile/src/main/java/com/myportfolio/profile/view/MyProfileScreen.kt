@@ -28,7 +28,7 @@ import com.myportfolio.profile.model.MyProfile
 import com.myportfolio.profile.model.ProfileSection
 import com.myportfolio.profile.model.SectionCategory
 import com.myportfolio.profile.model.SectionData
-import com.myportfolio.ui.theme.*
+import com.myportfolio.theme.*
 
 @Composable
 fun MyProfileScreen(viewModel : ProfileViewModel = viewModel()) {
