@@ -35,4 +35,8 @@ class ProjectRepositoryImpl : ProjectRepository {
     override fun getProjects(): ProjectList {
         return ProjectsData
     }
+
+    override fun getProjectById(id: Long): Project? {
+        return ProjectsData.projects.find { it.id == id }
+    }
 }
