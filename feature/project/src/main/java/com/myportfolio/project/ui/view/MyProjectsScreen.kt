@@ -1,4 +1,4 @@
-package com.myportfolio.projects.view
+package com.myportfolio.project.ui.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -22,11 +22,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.myportfolio.base.model.Routes
-import com.myportfolio.projects.domain.model.Project
-import com.myportfolio.projects.domain.model.ProjectList
-import com.myportfolio.projects.ui.viewmodel.ProjectListViewModel
-import com.myportfolio.ui.theme.*
+import com.myportfolio.project.domain.model.Project
+import com.myportfolio.project.domain.model.ProjectList
+import com.myportfolio.project.ui.viewmodel.ProjectListViewModel
+import com.myportfolio.theme.*
 
 @Composable
 fun MyProjectScreen(navigateTo: (String) -> Unit, viewModel: ProjectListViewModel = viewModel()) {
@@ -37,7 +36,7 @@ fun MyProjectScreen(navigateTo: (String) -> Unit, viewModel: ProjectListViewMode
     }
 
     UIProjectList(projectList = state.projectList) {
-        navigateTo(Routes.ProjectDetail.navigate(it.id.toString()))
+//        navigateTo(Routes.ProjectDetail.navigate(it.id.toString()))
     }
 }
 

@@ -1,10 +1,10 @@
-package com.myportfolio.projects.data.repository
+package com.myportfolio.project.data.repository
 
-import com.myportfolio.R
-import com.myportfolio.projects.domain.model.Project
-import com.myportfolio.projects.domain.model.ProjectList
-import com.myportfolio.projects.domain.model.Tag
-import com.myportfolio.projects.domain.repository.ProjectRepository
+import com.myportfolio.theme.R
+import com.myportfolio.project.domain.model.Project
+import com.myportfolio.project.domain.model.ProjectList
+import com.myportfolio.project.domain.model.Tag
+import com.myportfolio.project.domain.repository.ProjectRepository
 
 private val ProjectsData = ProjectList(
     projects = listOf(

@@ -1,4 +1,4 @@
-package com.myportfolio.projects.domain.model
+package com.myportfolio.project.domain.model
 
 import androidx.annotation.DrawableRes
 

@@ -22,8 +22,8 @@ import com.myportfolio.base.model.Routes.Companion.getSingleArgName
 import com.myportfolio.experiences.view.ExperienceDetailScreen
 import com.myportfolio.experiences.view.MyExperiencesScreen
 import com.myportfolio.profile.view.MyProfileScreen
-import com.myportfolio.projects.ui.view.ProjectDetailScreen
-import com.myportfolio.projects.view.MyProjectScreen
+import com.myportfolio.project.ui.view.MyProjectScreen
+import com.myportfolio.project.ui.view.ProjectDetailScreen
 
 @Composable
 fun AppContent() {

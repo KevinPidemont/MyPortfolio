@@ -1,4 +1,4 @@
-package com.myportfolio.projects.ui.view
+package com.myportfolio.project.ui.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -18,9 +18,9 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
-import com.myportfolio.projects.ui.viewmodel.ProjectDetailState
-import com.myportfolio.projects.ui.viewmodel.ProjectDetailViewModel
-import com.myportfolio.ui.theme.*
+import com.myportfolio.project.ui.viewmodel.ProjectDetailState
+import com.myportfolio.project.ui.viewmodel.ProjectDetailViewModel
+import com.myportfolio.theme.*
 
 @Composable
 fun ProjectDetailScreen(projectId: Long?, viewModel: ProjectDetailViewModel = viewModel()) {

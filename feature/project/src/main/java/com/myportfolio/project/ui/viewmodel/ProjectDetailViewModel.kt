@@ -1,4 +1,4 @@
-package com.myportfolio.projects.ui.viewmodel
+package com.myportfolio.project.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
