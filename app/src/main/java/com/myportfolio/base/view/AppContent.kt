@@ -19,8 +19,8 @@ import com.myportfolio.R
 import com.myportfolio.base.model.RouteArgument
 import com.myportfolio.base.model.Routes
 import com.myportfolio.base.model.Routes.Companion.getSingleArgName
-import com.myportfolio.experiences.view.ExperienceDetailScreen
-import com.myportfolio.experiences.view.MyExperiencesScreen
+import com.myportfolio.experience.view.ExperienceDetailScreen
+import com.myportfolio.experience.view.MyExperiencesScreen
 import com.myportfolio.profile.view.MyProfileScreen
 import com.myportfolio.project.ui.view.MyProjectScreen
 import com.myportfolio.project.ui.view.ProjectDetailScreen

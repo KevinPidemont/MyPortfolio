@@ -1,4 +1,4 @@
-package com.myportfolio.experiences.view
+package com.myportfolio.experience.view
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -14,12 +14,11 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.myportfolio.base.model.Routes
-import com.myportfolio.experiences.ExperienceUiState
-import com.myportfolio.experiences.ExperienceViewModel
-import com.myportfolio.experiences.model.WorkExperience
-import com.myportfolio.experiences.model.WorkExperienceList
-import com.myportfolio.ui.theme.*
+import com.myportfolio.experience.ExperienceUiState
+import com.myportfolio.experience.ExperienceViewModel
+import com.myportfolio.experience.model.WorkExperience
+import com.myportfolio.experience.model.WorkExperienceList
+import com.myportfolio.theme.*
 
 @Composable
 fun MyExperiencesScreen(
@@ -31,7 +30,7 @@ fun MyExperiencesScreen(
     // TODO show a loader and handle error
     when (val result = state.value) {
         is ExperienceUiState.Success -> WorkExperienceList(experienceList = result.experienceList) {
-            navigateTo(Routes.ExperienceDetail.navigate(it.id.toString()))
+//            navigateTo(Routes.ExperienceDetail.navigate(it.id.toString()))
 //            navigateTo(Routes.RoutesWithArguments.ExperienceDetail.create(it))
         }
     }

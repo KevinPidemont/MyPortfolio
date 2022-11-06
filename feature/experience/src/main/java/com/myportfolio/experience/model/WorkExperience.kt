@@ -1,4 +1,4 @@
-package com.myportfolio.experiences.model
+package com.myportfolio.experience.model
 
 data class WorkExperience(
     val id: Long,

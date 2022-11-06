@@ -1,4 +1,4 @@
-package com.myportfolio.experiences.view
+package com.myportfolio.experience.view
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable

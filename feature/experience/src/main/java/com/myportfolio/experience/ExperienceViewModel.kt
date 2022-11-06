@@ -1,10 +1,10 @@
-package com.myportfolio.experiences
+package com.myportfolio.experience
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.myportfolio.experiences.model.WorkExperience
-import com.myportfolio.experiences.model.WorkExperienceList
+import com.myportfolio.experience.model.WorkExperience
+import com.myportfolio.experience.model.WorkExperienceList
 
 private val WorkExperienceListDataSet = WorkExperienceList(
     experiences = listOf(
