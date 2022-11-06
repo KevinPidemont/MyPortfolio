@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace 'com.myportfolio.experience'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         minSdk 21
-        targetSdk 32
+        targetSdk 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -37,8 +37,7 @@ android {
 }
 
 dependencies {
-    def nav_version = "2.5.3"
-    def accompanist_version = "0.27.0"
+    def lifecycle_version = "2.5.1"
 
     implementation project(":core:theme")
     implementation 'androidx.core:core-ktx:1.9.0'
@@ -57,9 +56,6 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
 
-    implementation "androidx.navigation:navigation-compose:$nav_version"
-    implementation "androidx.compose.material:material-icons-extended:$compose_ui_version"
-
-    implementation "com.google.accompanist:accompanist-flowlayout:$accompanist_version"
-    implementation "com.google.accompanist:accompanist-pager:$accompanist_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
 }
